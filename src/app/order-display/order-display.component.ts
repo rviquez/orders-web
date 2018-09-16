@@ -29,6 +29,6 @@ export class OrderDisplayComponent implements OnInit {
   addProduct(product) {
     this.order.orderLines.push(product);
     product.orderId = this.order.id;
-    this.service.create(product).subscribe(result => console.log(result));
+    this.service.create(product).subscribe(result => console.log('Added:', result));
   }
 }
