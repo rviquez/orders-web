@@ -1,0 +1,5 @@
+<div *ngIf='orders' class="container">
+  <div *ngFor='let order of orders.order'>
+    <order-display [order]='order'></order-display>
+  </div>
+</div>

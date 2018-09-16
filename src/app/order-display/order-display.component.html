@@ -1,0 +1,30 @@
+<div class="card">
+  <a (click)="expandOnClick()" class="expand">
+    <div class="card-header bg-info text-white">
+      <div class="row">
+        <div class="col-md-11">{{ order.orderDetails }}</div>
+        <div class="col-md-1">{{ symbol }}</div>
+      </div>
+    </div>
+  </a>
+  <div class="card-body" *ngIf="expand">
+    <ul class="list-group list-group-flush">
+      <li *ngFor='let orderline of order.orderLines' class="list-group-item">
+        <div class="row">
+          <div class="col-md-8">
+            <div>Product: {{ orderline.description }}</div>
+            <div>Price : {{ orderline.price | currency}}</div>
+            <div>Quantity: {{ orderline.quantity }}</div>
+          </div>
+          <div class="col-md-4"></div>
+        </div>
+      </li>
+    </ul>
+    <div class="add-product">
+      <button (click)="clickedAddProduct()" class="btn btn-primary" [disabled]="add">Add Product</button>
+      <div *ngIf="add">
+        <add-product (productCreated)="addProduct($event)" (saved)="clickedAddProduct($event)"></add-product>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,25 @@
+<form #f="ngForm" (ngSubmit)="addProductToOrder(f.value)">
+  <div class="form-group">
+    <label for="productId">Product Id</label>
+<input ngModel #productId="ngModel" name="productId" type="number" class="form-control" id="productId" placeholder="Prodcut Id">
+  </div>
+  <div class="form-group">
+<label for="description">Description</label>
+<input ngModel #description="ngModel" name="description" type="text" class="form-control" id="description"
+  placeholder="Prodcut Description">
+  </div>
+  <div class="form-group">
+<label for="price">Price</label>
+<input ngModel #price="ngModel" name="price" type="number" class="form-control" id="price"
+  placeholder="Product Price">
+  </div>
+  <div class="form-group">
+<label for="quantity">Quantity</label>
+<input ngModel #quantity="ngModel" name="quantity" type="number" class="form-control" id="quantity"
+  placeholder="Quantity">
+  </div>
+  <div class="buttons">
+    <button class="btn btn-primary">Save</button>
+    <button class="btn btn-light" (click)="cancel()">Cancel</button>
+  </div>
+</form>
