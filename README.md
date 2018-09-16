@@ -4,7 +4,15 @@
 
 Install [NodeJs](https://nodejs.org/en/download/)
 
+Install [Git](https://git-scm.com/downloads)
+
 Run commands on a terminal or console of your preference
+
+```
+git clone https://github.com/rviquez/orders-web.git
+npm install
+npm start
+```
 
 ## Development server
 
